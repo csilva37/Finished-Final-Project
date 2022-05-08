@@ -12,8 +12,8 @@ const loggingOut = () => {
 <template>
   <div class="bg-red-800 text-red-200">
     <div class="container mx-auto flex items-center justify-between">
-      <h1 class="tracking-tighter text-3xl font-thin">
-        My <span class="font-normal">Fake Authentication</span>
+      <h1 class="tracking-tighter text-3xl font-bold">
+        Charlie's Character Creator
       </h1>
       <nav>
         <ul class="flex space-x-4 text-xl">
@@ -22,7 +22,7 @@ const loggingOut = () => {
               class="
                 py-8
                 px-4
-                hover:cursor-pointer hover:bg-green-500 hover:text-green-200
+                hover:cursor-pointer hover:bg-gray-500 hover:text-gray-200
               "
             >
               Home
@@ -33,35 +33,13 @@ const loggingOut = () => {
               class="
                 py-8
                 px-4
-                hover:cursor-pointer hover:bg-green-500 hover:text-green-200
+                hover:cursor-pointer hover:bg-gray-500 hover:text-gray-200
               "
             >
               About
             </li>
           </router-link>
-          <router-link :to="{ path: '/hello', name: 'Hello' }">
-            <li
-              class="
-                py-8
-                px-4
-                hover:cursor-pointer hover:bg-green-500 hover:text-green-200
-              "
-            >
-              Hello
-            </li>
-          </router-link>
-            <router-link :to="{ path: '/shop', name: 'Shop' }">
-            <li
-              class="
-                py-8
-                px-4
-                hover:cursor-pointer hover:bg-green-500 hover:text-green-200
-              "
-            >
-              Shop
-            </li>
-          </router-link>
-                    <router-link
+                   <router-link
             v-if="!isAuthenticated"
             :to="{ path: '/login', name: 'Login' }"
           >
@@ -70,16 +48,20 @@ const loggingOut = () => {
             >
               Login
             </li>
-          </router-link>
+          </router-link> 
           <div v-else class="flex">
-            <router-link :to="{ name: 'Secret' }">
-              <li
-                class="px-4 py-8  hover:cursor-pointer hover:bg-green-500 hover:text-green-800"
-              >
-                Secret
-              </li>
-            </router-link>
-            <button @click="loggingOut">
+          <router-link :to="{ path: '/character', name: 'Character' }">
+            <li
+              class="
+                py-8
+                px-4
+                hover:cursor-pointer hover:bg-gray-500 hover:text-gray-200
+              "
+            >
+              Character
+            </li>
+          </router-link>
+           <button @click="loggingOut">
               <li
                 class="px-4 py-8  hover:cursor-pointer hover:bg-green-500 hover:text-green-800"
               >
